@@ -29,6 +29,7 @@
  
   Please send comments, questions, or patches to info@bradanlane.com
  
+
 */
 
 /**
@@ -1437,7 +1438,7 @@ static int _load_params (void)
 	ros::NodeHandle nhp;					// not currently private namespace
 
 	// default I2C device on RPi2 and RPi3 = "/dev/i2c-1" Orange Pi Lite = "/dev/i2c-0"
-	nhp.param ("i2c_device_number", _controller_io_device, 1);
+	nhp.param ("i2c_device_number", _controller_io_device, 0);
 	std::stringstream device;
 	device << "/dev/i2c-" << _controller_io_device;
 	_init (device.str().c_str());
